@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("./assets/extra/bg2.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+.popup {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    display: none;
+}
+
+.popup div {
+	display: flex;
+    gap: 15px;
+	flex-direction: column;
+}
+
+.content {
+    height: 100vh;
+	display: flex;
+	flex-direction: column;
+	padding: 30px;
+	justify-content: space-between;
+}
+
+.topContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+button {
+	font-size: 50px;
+	border-radius: 10px;
+	padding: 8px 10px;
+}
+
+.pauseContainer {
+	display: flex;
+	justify-content: space-between;
+}
+
+.pause {
+	font-size: 20px;
+	border-radius: 10px;
+	padding: 8px 10px;
+}
+
+.scoreContainer {
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+
+.lives {
+	display: flex;
+	flex: 1;
+}
+
+.lives img {
+	height: 50px;
+}
+
+
+.timer {
+	flex: 0;
+    position: relative;
+    display: inline-block;
+    background-color: #f1f1f1;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.timer p {
+    color: black;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+}
+
+h1, p {
+	color: #f1f1f1;
+	font-size: 30px;
+}
+
+.score {
+	color: #f1f1f1;
+	font-size: 30px;
+	flex: 1;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-end;
+}
+
+.itemContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	perspective: 1000px;
+}
+
+.card {
+	position: relative;
+	width: 650px;
+	height: 400px;
+	text-align: center;
+	transform-style: preserve-3d;
+  	transition: transform 0.6s;
+}
+
+.card img {
+	width: 650px;
+  	height: 400px;
+}
+
+.cardFront, .cardBack {
+  	position: absolute;
+	backface-visibility: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.cardBack {
+  	transform: rotateY(180deg);
+  	background-color: #f1f1f1;
+	color: white;
+}
+
+.choicesContainer {
+	display: flex;
+	justify-content: space-around;
+}
+
+.choicesContainer div img {
+	width: 400px;
+	display:block;
+	z-index:999;
+	cursor: pointer;
+	-webkit-transition-property: all;
+	-webkit-transition-duration: 0.3s;
+	-webkit-transition-timing-function: ease;
+}
+
+.choicesContainer div img:hover {
+	transform: scale(1.05);
+}

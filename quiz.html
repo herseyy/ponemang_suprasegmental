@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="quiz.css" />
+</head>
+
+<body>
+  <div class="popup" id="popup">
+    <div>
+      <h1 id="finalScore"></h1>
+      <button id="resume" onclick="buttonClicked(this.id)">Ituloy</button>
+      <button id="retry" onclick="buttonClicked(this.id)">Umulit</button>
+      <button id="menu" onclick="buttonClicked(this.id)">Bumalik</button>
+      <button id="exit" onclick="buttonClicked(this.id)">Umalis</button>
+      <p id="result"></p>
+    </div>  
+  </div>
+
+  <div class="content" id="content">
+    <div class="topContainer">
+      <div class="pauseContainer">
+        <button class="pause" onclick="onPause()">Huminto</button>
+        <div class="score" id="status"></div>
+      </div>
+      <div class="scoreContainer">
+        <div class="lives">
+          <img id="life1" src="./assets/extra/life-red.png"/>
+          <img id="life2" src="./assets/extra/life-red.png"/>
+          <img id="life3" src="./assets/extra/life-red.png"/>
+        </div>
+
+        <div class="timer">
+          <p id="countdown"></p>
+        </div>
+        <div class="score" id="score">Puntos: 0</div>
+      </div>
+    </div>
+
+    <div class="itemContainer">
+      <div class="card" id="card">
+        <div class="cardFront">
+          <img id="question" />
+        </div>
+        <div class="cardBack">
+          <img id="isCorrect" />
+        </div>
+      </div>
+    </div>
+
+    <div class="choicesContainer">
+      <div id="optionA">
+        <img id="optionAImg" onclick="checkAns(this)"/>
+      </div>
+
+      <div id="optionB" >
+        <img id="optionBImg" onclick="checkAns(this)"/>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script type="text/javascript" src="quiz.js"></script>
+</html>

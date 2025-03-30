@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+	display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding: 100px 400px 100px 200px;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+    background-image: url("./assets/extra/bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.title {
+    height: 800px;
+}
+
+.startBtn {
+    cursor: pointer;
+    height: 250px;
+    display:block;
+    z-index:999;
+    cursor: pointer;
+    -webkit-transition-property: all;
+    -webkit-transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease;
+}
+
+.startBtn:hover {
+    transform: scale(1.05);
+}
