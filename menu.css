@@ -10,22 +10,25 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-image: url("./assets/extra/bg1.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 
 div {
     display: flex;
-    gap: 15px;
-    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url("./assets/extra/easy_bg.png");
+    background-color: rgba(0, 0, 0, .4);
+    background-blend-mode: darken;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 img {
     width: 350px;
-    display:block;
+    height: 200px;
+    display:flex;
     z-index:999;
     cursor: pointer;
     -webkit-transition-property: all;

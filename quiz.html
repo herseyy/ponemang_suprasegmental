@@ -11,19 +11,19 @@
   <div class="popup" id="popup">
     <div>
       <h1 id="finalScore"></h1>
-      <button id="resume" onclick="buttonClicked(this.id)">Ituloy</button>
-      <button id="retry" onclick="buttonClicked(this.id)">Umulit</button>
-      <button id="menu" onclick="buttonClicked(this.id)">Bumalik</button>
-      <button id="exit" onclick="buttonClicked(this.id)">Umalis</button>
-      <p id="result"></p>
+      <img id="resume" onclick="buttonClicked(this.id)" src="./assets/extra/resume.png" />
+      <img id="retry" onclick="buttonClicked(this.id)" src="./assets/extra/retry.png" />
+      <img id="menu" onclick="buttonClicked(this.id)" src="./assets/extra/back.png" />
+      <img id="exit" onclick="buttonClicked(this.id)" src="./assets/extra/exit.png" />
     </div>  
+    <p id="result"></p>
   </div>
 
   <div class="content" id="content">
     <div class="topContainer">
       <div class="pauseContainer">
-        <button class="pause" onclick="onPause()">Huminto</button>
-        <div class="score" id="status"></div>
+        <img class="pause" onclick="onPause()" src="./assets/extra/pause.png" />
+        <p class="diff" id="status"></p>
       </div>
       <div class="scoreContainer">
         <div class="lives">
@@ -35,7 +35,7 @@
         <div class="timer">
           <p id="countdown"></p>
         </div>
-        <div class="score" id="score">Puntos: 0</div>
+        <div class="score"><p id="score">Puntos: 0</p></div>
       </div>
     </div>
 
@@ -44,8 +44,7 @@
         <div class="cardFront">
           <img id="question" />
         </div>
-        <div class="cardBack">
-          <img id="isCorrect" />
+        <div class="cardBack" id="cardBack">
         </div>
       </div>
     </div>

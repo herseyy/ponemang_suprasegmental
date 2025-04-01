@@ -20,18 +20,21 @@ let qs = 0;
 let score = 0;
 let lives = 3;
 
-let isCorrect = document.getElementById("isCorrect")
+let isCorrect = document.getElementById("cardBack")
 
 if (currentDiff == "easy") {
 	// 5qs, 30 secs
+	document.body.style.backgroundImage = `url('./assets/extra/${currentDiff}_bg.png')`
 	sec = 30;
 	qs = 5;
 } else if (currentDiff == "medium") {
 	// 10qs, 20 secs 
+	document.body.style.backgroundImage = `url('./assets/extra/${currentDiff}_bg.png')`
 	sec = 20;
 	qs = 10;
 } else if (currentDiff == "hard") {
 	// 15 qs, 15 secs
+	document.body.style.backgroundImage = `url('./assets/extra/${currentDiff}_bg.png')`
 	sec = 15;
 	qs = 15;
 }
@@ -101,7 +104,7 @@ function startQuestion(index) {
 
 	        if (remTime == -1) {
 	        	document.getElementById(`life${lives}`).src = "./assets/extra/life-gray.png"
-	        	isCorrect.src = "./assets/extra/incorrect.png"
+	        	isCorrect.style.backgroundImage = 'url("./assets/extra/incorrect.png")';
 	        	document.getElementById("card").style.transform = "rotateY(180deg)";
 	        	lives--;
 	        }
@@ -143,13 +146,15 @@ function startCountdown() {
     clearInterval(timer);
     timer = setInterval(function () {
         if (!isPaused) {
-            document.getElementById("countdown").innerHTML = remTime;
+            if (remTime >= 0) {
+	        	document.getElementById("countdown").innerHTML = remTime;
+    		}
             remTime--;
 	        remTime_5--;
 
 	        if (remTime == -1) {
 	        	document.getElementById(`life${lives}`).src = "./assets/extra/life-gray.png"
-	        	isCorrect.src = "./assets/extra/incorrect.png"
+	        	isCorrect.style.backgroundImage = 'url("./assets/extra/incorrect.png")';
 	        	document.getElementById("card").style.transform = "rotateY(180deg)";
 	        	lives--;
 	        }
@@ -191,10 +196,11 @@ async function checkAns(event) {
 	if (data[ques]['correct'] == ans) {
 		score++;
 		document.getElementById("score").innerHTML = `Puntos: ${score}`;
-		isCorrect.src = "./assets/extra/correct.png"
+		isCorrect.style.backgroundImage = 'url("./assets/extra/correct.png")';
+
 	} else {
 		document.getElementById(`life${lives}`).src = "./assets/extra/life-gray.png"
-		isCorrect.src = "./assets/extra/incorrect.png"
+		isCorrect.style.backgroundImage = 'url("./assets/extra/incorrect.png")';
 		lives--;
 	}
 }

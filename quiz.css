@@ -5,7 +5,6 @@
 }
 
 body {
-    background-image: url("./assets/extra/bg2.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -26,6 +25,7 @@ body::before {
 
 .popup {
 	display: flex;
+	flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -34,8 +34,12 @@ body::before {
 
 .popup div {
 	display: flex;
-    gap: 15px;
 	flex-direction: column;
+}
+
+.popup img {
+	width: 250px;
+	cursor: pointer;
 }
 
 .content {
@@ -49,29 +53,22 @@ body::before {
 .topContainer {
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
-}
-
-button {
-	font-size: 50px;
-	border-radius: 10px;
-	padding: 8px 10px;
 }
 
 .pauseContainer {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 
 .pause {
-	font-size: 20px;
-	border-radius: 10px;
-	padding: 8px 10px;
+	width: 150px;
+	cursor: pointer;
 }
 
 .scoreContainer {
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	width: 100%;
 }
 
@@ -88,27 +85,28 @@ button {
 .timer {
 	flex: 0;
     position: relative;
-    display: inline-block;
-    background-color: #f1f1f1;
-    padding: 10px 20px;
+}
+
+
+h1, p {
+	color: #0B1215;
+	font-size: 30px;
+	background: linear-gradient(to bottom, #e7c15a, #c99b3d);
+    border: 5px solid #8b5a2b;
     border-radius: 10px;
+    padding: 10px 20px;
+    display: inline-block;
 }
 
 .timer p {
-    color: black;
+    color: #0B1215;
     font-size: 36px;
     font-weight: bold;
     text-align: center;
 }
 
-h1, p {
-	color: #f1f1f1;
-	font-size: 30px;
-}
-
 .score {
 	color: #f1f1f1;
-	font-size: 30px;
 	flex: 1;
 	display: flex;
 	align-items: flex-start;
@@ -137,6 +135,8 @@ h1, p {
 }
 
 .cardFront, .cardBack {
+	width: 650px;
+  	height: 400px;
   	position: absolute;
 	backface-visibility: hidden;
 	display: flex;
@@ -146,8 +146,11 @@ h1, p {
 
 .cardBack {
   	transform: rotateY(180deg);
-  	background-color: #f1f1f1;
-	color: white;
+  	background-color: transparent;
+	background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+	background-image: url("./assets/extra/correct.png");
 }
 
 .choicesContainer {
