@@ -49,3 +49,7 @@ function navigateDifficulty(id) {
 			location.href = "./quiz.html"
 	}
 }
+
+function homePage() {
+	location.href = "./index.html"
+}
